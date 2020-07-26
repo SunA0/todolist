@@ -39,7 +39,7 @@
 		}
 		return value.toString().replace('TMD','***')
 	})
-
+	Vue.use(MyPlugin)
 	var app = new Vue({
 		el:"#todoapp",
 		data:{
@@ -166,13 +166,15 @@
 			}		
 		}
 	})
-//路由hash改变时
-window.onhashchange = function(){
-	console.log("change url hash",window.location.hash)
-	//=> "#/all"
-	app.filterStatus = window.location.hash.substr(2) || 'all'
-	
-}
-window.onhashchange()
-
+	//调用插件实例方法
+	app.$myMethod("!!!!!!!!!!!!")
+	//调用全局方法
+	Vue.myGlobalMethod()
+	//路由hash改变时
+	window.onhashchange = function(){
+		console.log("change url hash",window.location.hash)
+		//=> "#/all"
+		app.filterStatus = window.location.hash.substr(2) || 'all'
+	}
+	window.onhashchange()
 })(Vue);
