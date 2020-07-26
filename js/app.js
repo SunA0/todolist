@@ -32,6 +32,14 @@
 		}
 
 	})
+	//全局过滤
+	Vue.filter('contentFilter',function(value){
+		if(!value){
+			return ''
+		}
+		return value.toString().replace('TMD','***')
+	})
+
 	var app = new Vue({
 		el:"#todoapp",
 		data:{

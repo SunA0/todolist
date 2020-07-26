@@ -28,7 +28,7 @@
 					<li v-for="(item,index) in filterItems" v-bind:class="{completed:item.completed,editing:item === currentItem}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="item.completed">
-							<label @dblclick="toEdit(item)">{{item.content}}</label>
+							<label @dblclick="toEdit(item)">{{item.content | contentFilter}}</label>
 							<!-- 删除按钮 -->
 							<button class="destroy" v-bind:value="item.id" @click="removeItem(index)"></button>
 						</div>
