@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>learn-component</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+
+	</head>
+	<body>
+		<div id = "app">
+			<app-navbar></app-navbar>
+			<app-leaf></app-leaf>
+			<app-home></app-home>
+		</div>
+		<script src="node_modules/vue/dist/vue.js"></script>
+		<script src="js/components/navbar.js"></script>
+		<script src="js/components/leaf.js"></script>
+		<script src="js/components/home/Dashboard.js"></script>
+		<script src="js/components/home/Item.js"></script>
+		<script src="js/components/home/HomeList.js"></script>
+		
+	
+		<script src="js/components/home/AppHome.js"></script>
+		
+		
+		
+		
+		<script>
+			new Vue({
+				el:"#app",
+				components:{
+					'app-navbar':AppNavbar,
+					'app-leaf':AppLeaf,
+					'app-home':AppHome
+			}})
+		</script>
+	</body>
+</html>
