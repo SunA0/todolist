@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/app.css">
 	</head>
 	<body>
+		
 		<section class="todoapp" id="todoapp">
 			<!-- 搜索栏 -->
 			<header class="header">
@@ -55,8 +56,12 @@
 				</ul>
 				<!-- 清空按钮 总任务数>未完成数-->
 				<button class="clear-completed" @click = "removeCompleted" v-show="items.length > sum">Clear completed</button>
+				
 			</footer>
 			</template>
+			<test-component></test-component>
+			<test-component></test-component>
+			<test-component></test-component>
 		</section>
 
 	

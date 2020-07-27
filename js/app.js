@@ -14,8 +14,18 @@
 	}
 
 	const items=[{id:1,content:"vue",completed:false},
-				{id:2,content:"java",completed:false},
-				{id:3,content:"rails",completed:true}]
+				 {id:2,content:"java",completed:false},
+				 {id:3,content:"rails",completed:true}]
+
+	//全局注册组件,引用时一定要用横线形式
+	Vue.component('testComponent',{
+		template:'<div>头部组件 {{title}}</div>',
+		data:function(){
+			return {
+				title: "xxx"
+			}
+		}
+	})			 
 	//全局自定义指令
 	//自动获取焦点
 	Vue.directive("app-focus",{
@@ -39,6 +49,7 @@
 		}
 		return value.toString().replace('TMD','***')
 	})
+	//使用插件
 	Vue.use(MyPlugin)
 	var app = new Vue({
 		el:"#todoapp",
